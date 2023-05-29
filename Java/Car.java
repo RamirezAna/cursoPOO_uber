@@ -1,19 +1,32 @@
 package Java;
 
+import javax.swing.text.DefaultEditorKit.PasteAction;
 
 class Car {
     Integer id;
     String license;
     Account driver;
-    Integer passengenger;
+    private Integer passengenger;
 
     public Car(String license, Account driver){
         this.license = license;
-        this.driver = driver;
+        this.driver = driver; 
     }
 
     void printDataCar(){
-        System.out.println("License" +license + "Name Driver" +driver.name);
+        if(passengenger != null){
+            System.out.println("License" +license + "Name Driver" +driver.name + "Pasajeros " +passengenger);
+        }
+        
+    public Integer getPassengenger(){
+        return passengenger;
+    }
+    public void setPassengenger(Integer passengenger){ 
+        if(passengenger ==4 ){
+            this.passengenger = passengenger;
+        }else{
+            System.out.println("Cantidad pasajeros incorrecto");
+        }
     }
 
 }
